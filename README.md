@@ -12,6 +12,21 @@ This project is an expert system designed to optimize supply chain management by
 ## Running the Project
 
 ### Backend
+1. Create Python Venv
+    ```bash
+    python -m venv venv
+    ```
+2. Activate python venv
+    1. Windows
+    ```bash
+    source venv/scripts/activate
+    ```
+    2. Linux/Mac
+    ```bash
+    source venv/bin/activate
+    ```
+
+### Backend
 1. Navigate to the `backend` directory:
     ```bash
     cd backend
@@ -22,7 +37,7 @@ This project is an expert system designed to optimize supply chain management by
     ```
 3. Run the FastAPI server:
     ```bash
-    python app/main.py
+    uvicorn main:app --reload
     ```
 
 ### Frontend
@@ -66,57 +81,13 @@ docker build -t supply-chain-frontend .
 docker run -p 8501:8501 supply-chain-frontend
 ```
 
-## Adding a Collaborators Tab
+## Collaborators
 
-You can add a "Collaborators" tab to the Streamlit app by following these steps:
+### This project is developed by:
+1. Manarth Patel
+2. Shriram Yadav
+3. Rakshay Patel
 
-```python
-import streamlit as st
-
-# Set up tabs
-tabs = st.tabs(["Home", "Inventory", "Supplier Selection", "Logistics", "Collaborators"])
-
-# Collaborators Tab
-with tabs[4]:
-    st.header("Collaborators")
-    st.write("This project is developed by:")
-    st.write("- Manarth Patel")
-    st.write("- Shriram Yadav")
-    st.write("- Rakshay Patel")
-```
-
-## Enhancing the UI with Fancy Elements
-
-### Adding a Line Chart
-```python
-import pandas as pd
-import numpy as np
-import streamlit as st
-
-# Sample data
-data = pd.DataFrame(
-    np.random.randn(100, 3),
-    columns=['Inventory Level', 'Supplier Efficiency', 'Logistics Cost']
-)
-
-# Line chart
-st.line_chart(data)
-```
-
-### Adding a Progress Bar
-```python
-import time
-import streamlit as st
-
-st.header("Optimizing Supply Chain...")
-
-progress = st.progress(0)
-for i in range(100):
-    time.sleep(0.1)
-    progress.progress(i + 1)
-
-st.write("Optimization Complete!")
-```
 
 ### Docker Compose Setup
 You can combine the backend and frontend into a single Docker Compose setup.

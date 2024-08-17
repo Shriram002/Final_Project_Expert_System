@@ -5,10 +5,10 @@ def evaluate_inventory(inventory_level: int, threshold: int) -> str:
         return "Restock Needed"
     return "Sufficient Inventory"
 
-def select_supplier(suppliers: List[dict]) -> str:
-    best_supplier = min(suppliers, key=lambda s: s['cost'])
-    return best_supplier['name']
+def select_supplier(suppliers: List[object]) -> str:
+    best_supplier = min(suppliers, key=lambda s: s.cost)  # Assuming 'cost' is an attribute
+    return best_supplier.name  # Assuming 'name' is an attribute
 
-def optimize_transportation(options: List[dict]) -> str:
-    best_option = min(options, key=lambda o: o['time'])
-    return best_option['route']
+def optimize_transportation(options: List[object]) -> str:
+    best_option = min(options, key=lambda o: o.time)
+    return best_option.route

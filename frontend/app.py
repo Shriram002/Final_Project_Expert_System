@@ -16,8 +16,8 @@ def main():
             "inventory_level": inventory_level,
             "threshold": threshold
         })
-        st.write("Response Status Code:", response.status_code)
-        st.write("Response Text:", response.text)
+        #st.write("Response Status Code:", response.status_code)
+        #st.write("Response Text:", response.text)
         
         if response.status_code == 200:
             try:
@@ -41,8 +41,8 @@ def main():
     
     if st.button("Select Best Supplier"):
         response = requests.post(f"{BACKEND_URL}/select_supplier/", json={"suppliers": suppliers})
-        st.write("Response Status Code:", response.status_code)
-        st.write("Response Text:", response.text)
+        #st.write("Response Status Code:", response.status_code)
+        #st.write("Response Text:", response.text)
         
         if response.status_code == 200:
             try:
@@ -66,8 +66,8 @@ def main():
     
     if st.button("Optimize Transportation"):
         response = requests.post(f"{BACKEND_URL}/optimize_transportation/", json={"options": options})
-        st.write("Response Status Code:", response.status_code)
-        st.write("Response Text:", response.text)
+        #st.write("Response Status Code:", response.status_code)
+        #st.write("Response Text:", response.text)
         
         if response.status_code == 200:
             try:
