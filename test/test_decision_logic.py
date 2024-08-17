@@ -1,4 +1,4 @@
-from backend.app.decision_logic import evaluate_inventory, select_supplier, optimize_transportation
+from backend.backend_app.decision_logic import evaluate_inventory, select_supplier, optimize_transportation
 
 def test_evaluate_inventory():
     assert evaluate_inventory(20, 30) == "Restock Needed"
